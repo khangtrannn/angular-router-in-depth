@@ -1,10 +1,10 @@
-import { User } from "./user";
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { UsersService } from "./users.service";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from './user';
+import { UsersService } from './users.service';
 
 @Component({
-  selector: "app-user-list",
+  selector: 'app-user-list',
   template: `
     <ng-container *ngIf="users$ | async as users">
       <div *ngFor="let user of users" class="user-list">
@@ -12,7 +12,7 @@ import { UsersService } from "./users.service";
           <h5>{{ user.name }}</h5>
           <p>{{ user.email }}</p>
         </div>
-        <a mat-stroked-button [routerLink]="['user', user.id]">Details</a>
+        <a mat-stroked-button [routerLink]="[user.id]">Details</a>
       </div>
     </ng-container>
   `,
