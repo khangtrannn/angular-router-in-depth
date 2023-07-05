@@ -14,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ListComponent } from './list/list.component';
+import { AdminRoutingModule } from "./admin-routing.module";
 
 
 const declarations = [WelcomeComponent, AddUserComponent, AddProductComponent];
@@ -31,6 +32,7 @@ const declarations = [WelcomeComponent, AddUserComponent, AddProductComponent];
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
+    AdminRoutingModule,
   ],
   exports: [declarations]
 })
