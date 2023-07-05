@@ -1,3 +1,5 @@
+<mat-progress-bar *ngIf="isLoading$ | async" color="accent" mode="indeterminate" style="position: absolute; top: 0; left: 0;"></mat-progress-bar>
+
 <mat-toolbar color="primary">
   <span>Routing Guards</span>
   <a mat-button class="first-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" routerLink="/">Home</a>

@@ -10,6 +10,11 @@ const routes: Routes = [
     path: 'user/:id',
     component: UserComponent,
     resolve: {
+      /**
+       * Besides UserResolver, we can use as many resolver as we need
+       * Child route will not get this data, so if you have child route and you want to get access to this resolve
+       * you have to use this.activatedRoute.parent
+       */
       user: UserResolver,
     },
   },
