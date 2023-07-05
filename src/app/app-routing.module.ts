@@ -20,7 +20,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    // preloadAllModules strategy doesn't work with canLoad
+    /**
+     * preloadAllModules strategy doesn't work with canLoad
+     * why doesn't happen? Because it is by design preloadAllModules strategy doesn't work with canLoad guard
+     * And it is basically makes sense because pre-loading happens when we start the application, at this point of time
+     * we cannot detect if user as example logged in and that's why we have to resolve it at the run time later on
+     * when we explicitly navigate to this router, so that's why it doesn't work together
+     */
     // preloadingStrategy: PreloadAllModules,
     preloadingStrategy: AuthPreloadStrategy
   })],
