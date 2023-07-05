@@ -13,6 +13,10 @@ const routes: Routes = [
     // canLoad: [LoadGuard],
   },
   {
+    path: 'users',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+  },
+  {
     path: '',
     component: HomeComponent
   }
