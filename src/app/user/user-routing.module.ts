@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserPageComponent } from './user-page.component';
+import { UserSidebarComponent } from './user-sidebar.component';
 import { UserComponent } from './user.component';
 import { UserResolver } from './user.resolver';
 
@@ -10,8 +11,13 @@ const routes: Routes = [
     component: UserPageComponent,
     children: [
       {
+        path: '',
+        component: UserSidebarComponent,
+      },
+      {
         path: ':id',
         component: UserComponent,
+        outlet: 'details',
         resolve: {
           /**
            * Besides UserResolver, we can use as many resolver as we need

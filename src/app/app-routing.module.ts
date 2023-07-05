@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthPreloadStrategy } from './auth/auth-preload-strategy';
-import { LoadGuard } from './auth/load.guard';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
     // If we use canActivate here, it means even user isn't authorized, the app module js will be still loaded
     // canActivate: [AuthenticationGuard],
     // canLoad: [LoadGuard],
@@ -18,8 +18,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({

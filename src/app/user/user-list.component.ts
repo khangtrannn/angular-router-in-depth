@@ -12,7 +12,11 @@ import { UsersService } from './users.service';
           <h5>{{ user.name }}</h5>
           <p>{{ user.email }}</p>
         </div>
-        <a mat-stroked-button [routerLink]="[user.id]">Details</a>
+        <a
+          mat-stroked-button
+          [routerLink]="['users', { outlets: { details: ['users', user.id] } }]"
+          >Details</a
+        >
       </div>
     </ng-container>
   `,

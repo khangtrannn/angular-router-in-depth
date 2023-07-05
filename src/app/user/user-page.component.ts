@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
   template: `
     <div style="display: flex; gap: 2rem">
       <aside style="width: 400px;" class="sidebar">
-        <app-user-sidebar></app-user-sidebar>
+        <router-outlet></router-outlet>
       </aside>
       <section style="flex: 1" class="details">
-        <router-outlet></router-outlet>
+        <router-outlet name="details"></router-outlet>
       </section>
     </div>
   `,
