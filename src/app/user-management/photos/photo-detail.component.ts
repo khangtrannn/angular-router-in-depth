@@ -5,9 +5,8 @@ import { Subject, takeUntil } from "rxjs";
 @Component({
   template: `
     <div>
-      {{ image }}
       <h1>Photo Detail</h1>
-      <img *ngFor="let i of [image]" style="max-width: 500px;" src="https://source.unsplash.com/random/?person" alt="Random Photo">
+      <img *ngFor="let i of [image]" style="max-width: 500px;" [src]="'https://source.unsplash.com/random/?person&random=' + image" alt="Random Photo">
     </div>
   `,
 })
