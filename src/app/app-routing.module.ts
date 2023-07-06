@@ -18,6 +18,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    title: 'Homepage',
     component: HomeComponent,
   },
 ];

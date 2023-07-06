@@ -6,20 +6,24 @@ import { UserSidebarComponent } from './user-list/user-sidebar.component';
 import { UserComponent } from './user-list/user.component';
 import { UserResolver } from './user-list/user.resolver';
 import { UserManagementComponent } from './user-management.component';
+import { UserTitleResolverService } from './user-title-resolver.service';
 
 const routes: Routes = [
   {
     path: '',
     component: UserManagementComponent,
+    title: 'User Management',
     children: [
       {
         path: 'user-list',
+        title: 'User List',
         component: UserSidebarComponent,
       },
       {
         path: 'user/:id',
         component: UserComponent,
         outlet: 'details',
+        title: UserTitleResolverService,
         resolve: {
           /**
            * Besides UserResolver, we can use as many resolver as we need
@@ -27,14 +31,17 @@ const routes: Routes = [
            * you have to use this.activatedRoute.parent
            */
           user: UserResolver,
+          title: UserTitleResolverService,
         },
       },
       {
         path: 'photo-list',
         component: PhotosSidebarComponent,
+        title: 'Photo List',
       },
       {
         path: 'photo/:id',
+        title: 'Photo Detail',
         component: PhotoDetailComponent,
         outlet: 'details',
       }

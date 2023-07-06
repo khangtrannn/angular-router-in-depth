@@ -19,3 +19,7 @@ Reference: user management module
 ## Providers in Angular Route
 Understanding more about Angular Injector Hierarchy
 https://www.youtube.com/watch?v=3iSADIqLp2E&list=PLX7eV3JL9sflxg0fWgaWoz43Rx99bivmv&index=6
+
+## Page title
+custom strategy title
+named route-outlet title

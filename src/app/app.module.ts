@@ -8,10 +8,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
-import { RouterModule } from '@angular/router';
+import { RouterModule, TitleStrategy } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { CustomTitleStrategyService } from './shared/services/custom-title-strategy.service';
 
 @NgModule({
   declarations: [AppComponent, ConfirmDialogComponent, ConfirmDialogComponent],
@@ -26,7 +27,12 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDialogModule,
     MatProgressBarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: TitleStrategy,
+      useClass: CustomTitleStrategyService,
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
