@@ -17,7 +17,7 @@ export class UserResolver {
 
   resolve(route: ActivatedRouteSnapshot): Observable<User> {
     return this.users.getUser(route.params?.['id']).pipe(
-      delay(4000),
+      delay(1000),
       catchError(() => {
         this.router.navigate(['']);
         return EMPTY;

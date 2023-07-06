@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserPageComponent } from './user-page.component';
-import { UserSidebarComponent } from './user-sidebar.component';
-import { UserComponent } from './user.component';
-import { UserResolver } from './user.resolver';
+import { PhotosSidebarComponent } from './photos/photos-sidebar.component';
+import { UserPageComponent } from './user-list/user-page.component';
+import { UserSidebarComponent } from './user-list/user-sidebar.component';
+import { UserComponent } from './user-list/user.component';
+import { UserResolver } from './user-list/user.resolver';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
       {
         path: '',
         component: UserSidebarComponent,
+      },
+      {
+        path: 'photos',
+        component: PhotosSidebarComponent,
       },
       {
         path: ':id',
