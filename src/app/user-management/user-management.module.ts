@@ -9,6 +9,7 @@ import { UserManagementComponent } from './user-management.component';
 import { UserManagementRoutingModule } from './user-management-routing.module';
 import { UserSidebarComponent } from './user-list/user-sidebar.component';
 import { UserComponent } from './user-list/user.component';
+import { PhotoDetailComponent } from './photos/photo-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserComponent } from './user-list/user.component';
     UserListComponent,
     UserSidebarComponent,
     PhotosSidebarComponent,
+    PhotoDetailComponent,
   ],
   imports: [CommonModule, RouterModule, MatButtonModule, UserManagementRoutingModule],
 })

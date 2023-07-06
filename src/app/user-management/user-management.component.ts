@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
   template: `
     <div style="margin-bottom: 2rem;">
       <a mat-button [routerLink]="['user-list']">User List</a>
-      <a mat-button>Photo List</a>
+      <a mat-button routerLink="photo-list">Photo List</a>
     </div>
     <div style="display: flex; gap: 2rem">
-      <aside style="width: 400px;" class="sidebar">
+      <aside style="width: 300px;" class="sidebar">
         <router-outlet></router-outlet>
       </aside>
       <section style="flex: 1" class="details">

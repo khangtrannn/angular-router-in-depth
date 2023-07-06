@@ -10,13 +10,13 @@ interface Photo {
 @Component({
   selector: "app-photos-sidebar",
   template: `
-    <ul>
-      <li *ngFor="let photo of photos$ | async" class="user">
+    <ul style="list-style: none;">
+      <li *ngFor="let photo of photos$ | async" style="margin-top: 1rem;" class="user">
         <a
           class="link"
-          [routerLink]="['/users/photo-list', { outlets: { details: ['photo', photo.id] } }]"
+          [routerLink]="['/users', { outlets: { details: ['photo', photo.id] } }]"
         >
-          <img [src]="photo.thumbnailUrl" alt="" width="60" />
+          <img [src]="photo.thumbnailUrl" alt="" width="150" />
         </a>
       </li>
     </ul>
