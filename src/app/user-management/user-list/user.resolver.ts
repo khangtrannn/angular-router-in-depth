@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EMPTY, Observable, catchError, delay } from 'rxjs';
 import { User } from './user';
-import { UsersService } from './users.service';
+import { UsersService } from '../../services/users.service';
 
 /**
  * Drawback

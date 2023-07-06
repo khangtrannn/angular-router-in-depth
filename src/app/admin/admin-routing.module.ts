@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormGuard } from '../auth/form.guard';
 import { PermissionsGuard } from '../auth/permissions.guard';
+import { ExperimentalUsersService } from '../services/experimental-users.service';
+import { UsersService } from '../services/users.service';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ListComponent } from './list/list.component';
+import { StaffListExperimentalComponent } from './staff-list-experimental/staff-list-experimental.component';
+import { StaffListComponent } from './staff-list/staff-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes = [
@@ -45,6 +49,20 @@ const routes = [
         path: 'list',
         component: ListComponent,
       },
+      {
+        path: 'staff-list',
+        component: StaffListComponent,
+      },
+      {
+        path: 'staff-list-experimental',
+        component: StaffListExperimentalComponent,
+        providers: [
+          {
+            provide: UsersService,
+            useExisting: ExperimentalUsersService,
+          }
+        ]
+      }
     ],
   },
 ];
