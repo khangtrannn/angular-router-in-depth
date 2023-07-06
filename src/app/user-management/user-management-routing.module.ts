@@ -23,6 +23,7 @@ const routes: Routes = [
         path: 'user/:id',
         component: UserComponent,
         outlet: 'details',
+        // TODO: the title resolve service is not working properly
         title: UserTitleResolverService,
         resolve: {
           /**
