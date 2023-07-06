@@ -14,7 +14,7 @@ import { UsersService } from './users.service';
         </div>
         <a
           mat-stroked-button
-          [routerLink]="['/users/user-list', { outlets: { details: [user.id] } }]"
+          [routerLink]="['/users/user-list', { outlets: { details: ['user', user.id] } }]"
           >Details</a
         >
       </div>

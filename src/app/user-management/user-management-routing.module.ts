@@ -18,7 +18,7 @@ const routes: Routes = [
             component: UserSidebarComponent,
           },
           {
-            path: ':id',
+            path: 'user/:id',
             component: UserComponent,
             outlet: 'details',
             resolve: {
