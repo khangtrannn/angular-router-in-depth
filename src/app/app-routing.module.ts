@@ -1,8 +1,8 @@
 import { inject, NgModule } from '@angular/core';
 import { Route, Router, RouterModule, Routes, UrlSegment } from '@angular/router';
-import { map } from 'rxjs';
 import { AuthPreloadStrategy } from './auth/auth-preload-strategy';
 import { HomeComponent } from './home/home.component';
+import { AuthService } from './shared/services/auth.service';
 
 import { UserPermissionsService } from './shared/services/user-permissons.service';
 
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./user-management/user-management.module').then((m) => m.UserManagementModule),
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings-routes').then((r) => r.SettingsRoutes),
   },
   {
     path: '',

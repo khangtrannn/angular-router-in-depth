@@ -3,9 +3,10 @@
 <mat-toolbar color="primary">
   <span>Angular Router In Depth</span>
   <a mat-button class="first-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" routerLink="/">Home</a>
-  <a mat-button routerLinkActive="active" routerLink="/users">Users</a>
+  <a mat-button routerLinkActive="active" routerLink="/users/user-list">Users</a>
   <a mat-button routerLinkActive="active" routerLink="/admin">Admin</a>
   <a mat-button routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
+  <a mat-button routerLinkActive="active" routerLink="/settings/general">Settings</a>
 </mat-toolbar>
 <main class="content">
   <router-outlet></router-outlet>

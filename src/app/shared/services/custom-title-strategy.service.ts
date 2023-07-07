@@ -13,10 +13,7 @@ export class CustomTitleStrategyService extends TitleStrategy {
   updateTitle(snapshot: RouterStateSnapshot): void {
     // TODO: improve & refactor
     const detailsOutlet = snapshot.root.children[0]?.children[0]?.children.find((r) => r.outlet === 'details');
-
     let title = this.buildTitle(snapshot);
-
-    console.log(detailsOutlet);
 
     if (detailsOutlet && detailsOutlet.routeConfig?.title) {
       title = `${title} - ${detailsOutlet.routeConfig?.title}`;

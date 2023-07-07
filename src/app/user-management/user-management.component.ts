@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-user-management',
   template: `
     <div style="margin-bottom: 2rem;">
-      <a mat-button [routerLink]="['user-list']">User List</a>
+      <a mat-button routerLink="user-list">User List</a>
       <a mat-button routerLink="photo-list">Photo List</a>
     </div>
     <div style="display: flex; gap: 2rem">

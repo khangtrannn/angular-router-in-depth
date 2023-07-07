@@ -34,5 +34,8 @@ The reason is canLoad has a couple of drawbacks
 ## Route navigation life cycle
 route-navigation-life-cycle.png
 
+## Component-Less and Empty-Path Routes
+The idea behind this pattern is you have to just introduce a new route. This route has empty path and this route doesn't have component to render instead it has a property children.
+
 ## Notes
 Angular router uses the first match win strategy
