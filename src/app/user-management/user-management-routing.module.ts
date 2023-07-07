@@ -24,6 +24,7 @@ const routes: Routes = [
         component: UserComponent,
         outlet: 'details',
         // TODO: the title resolve service is not working properly
+        // current behavior returns the class implementation as a string
         title: UserTitleResolverService,
         resolve: {
           /**

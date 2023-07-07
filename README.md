@@ -23,3 +23,16 @@ https://www.youtube.com/watch?v=3iSADIqLp2E&list=PLX7eV3JL9sflxg0fWgaWoz43Rx99bi
 ## Page title
 custom strategy title
 named route-outlet title
+
+## canMatch
+Disable or enable a route depending on some certain conditions
+canMatch is a powerful replacement for the canLoad guard and according to the pull request for canMatch that canLoad guard can be deprecated in the future in favor of canMatch
+
+The reason is canLoad has a couple of drawbacks
+- canLoad is called only when you lazy load a module but not when you lazy load a standalone component
+
+## Route navigation life cycle
+route-navigation-life-cycle.png
+
+## Notes
+Angular router uses the first match win strategy

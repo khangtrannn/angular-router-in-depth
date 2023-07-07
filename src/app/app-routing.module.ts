@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { inject, NgModule } from '@angular/core';
+import { Route, Router, RouterModule, Routes, UrlSegment } from '@angular/router';
+import { map } from 'rxjs';
 import { AuthPreloadStrategy } from './auth/auth-preload-strategy';
 import { HomeComponent } from './home/home.component';
+
+import { UserPermissionsService } from './shared/services/user-permissons.service';
 
 const routes: Routes = [
   {
@@ -11,6 +14,22 @@ const routes: Routes = [
     // If we use canActivate here, it means even user isn't authorized, the app module js will be still loaded
     // canActivate: [AuthenticationGuard],
     // canLoad: [LoadGuard],
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/admin-dashboard.component').then((c) => c.AdminDashboardComponent),
+    canMatch: [(route: Route, segments: UrlSegment[]) => {
+      const router = inject(Router);
+      // return inject(UserPermissionsService).isAdmin$.pipe(
+      //   map(isAdmin => isAdmin || router.createUrlTree(['']))
+      // );
+
+      return inject(UserPermissionsService).isAdmin$;
+    }]
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/user-dashboard.component').then((c) => c.UserDashboardComponent),
   },
   {
     path: 'users',
